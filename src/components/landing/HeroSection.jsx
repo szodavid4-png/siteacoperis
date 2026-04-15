@@ -45,4 +45,93 @@ export default function HeroSection() {
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
- 
+              >
+                Acoperișuri
+              </motion.div>
+            </div>
+            {/* Line 2: CARE DEFINESC — centered */}
+            <div className="overflow-hidden text-center">
+              <motion.div
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              >
+                care definesc
+              </motion.div>
+            </div>
+            {/* Line 3: ORIZONTUL — right aligned, red */}
+            <div className="overflow-hidden text-right">
+              <motion.div
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="text-primary"
+              >
+                orizontul.
+              </motion.div>
+            </div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1 }}
+            className="text-muted-foreground text-lg lg:text-xl max-w-xl leading-relaxed mb-10 font-medium mx-auto text-center"
+          >
+            Materiale de cea mai înaltă calitate, meșteri cu experiență și o garanție
+            care vă oferă liniște. Fiecare proiect este o capodoperă de inginerie.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.1 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
+            <motion.button
+              onClick={() => scrollTo('#contact')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="relative px-8 py-4 bg-primary text-primary-foreground font-black rounded-sm text-base tracking-widest uppercase overflow-hidden group"
+            >
+              <span className="relative z-10">Solicită Ofertă Gratuită</span>
+              <motion.span
+                className="absolute inset-0 bg-white/10"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.4 }}
+              />
+            </motion.button>
+
+            <motion.button
+              onClick={() => scrollTo('#servicii')}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="px-8 py-4 border-2 border-border text-foreground font-bold rounded-sm text-base tracking-widest uppercase hover:border-primary hover:text-primary transition-colors duration-300"
+            >
+              Descoperă Serviciile
+            </motion.button>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-2 cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+          onClick={() => scrollTo('#servicii')}
+        >
+          <span className="text-xs tracking-[0.2em] uppercase font-bold">Descoperă</span>
+          <ChevronDown className="w-5 h-5" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
