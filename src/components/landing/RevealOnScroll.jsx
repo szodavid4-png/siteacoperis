@@ -44,4 +44,13 @@ export default function RevealOnScroll({ children, className = '', delay = 0 }) 
               key="mask-right"
               className="absolute inset-y-0 right-0 z-20"
               style={{ background: 'hsl(0,80%,55%)', width: '50%' }}
- 
+              initial={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
