@@ -103,4 +103,5 @@ html {
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(0, 80%, 55%);
-  border-radius: 3p
+  border-radius: 3px;
+}
