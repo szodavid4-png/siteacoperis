@@ -45,4 +45,63 @@ export default function FooterSection() {
                   >
                     {link.label}
                   </button>
- 
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wide">
+              Servicii
+            </h4>
+            <ul className="space-y-3">
+              {['Învelitori ceramice', 'Învelitori metalice', 'Acoperișuri plate', 'Jgheaburi & burlane', 'Renovare acoperiș', 'Izolație & mansardare'].map((s) => (
+                <li key={s}>
+                  <button
+                    onClick={() => scrollTo('#contact')}
+                    className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  >
+                    {s}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wide">
+              Contact
+            </h4>
+            <ul className="space-y-4">
+              <li>
+                <a href="tel:+40786188957" className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors">
+                  <Phone className="w-4 h-4 text-primary" />
+                  0786 188 957
+                </a>
+              </li>
+
+              <li className="flex items-start gap-3 text-muted-foreground text-sm">
+                <MapPin className="w-4 h-4 text-primary mt-0.5" />
+                <span>București și împrejurimi<br />Ilfov, Giurgiu, Dâmbovița</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-xs">
+            © {new Date().getFullYear()} Acoperișuri Premium. Toate drepturile rezervate.
+          </p>
+          <p className="text-muted-foreground text-xs">
+            Calitate · Garanție · Profesionalism
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
