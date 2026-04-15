@@ -45,4 +45,162 @@ export default function GallerySection() {
       if (!isDragging.current && !pausedRef.current) {
         xRef.current -= AUTO_SPEED;
         if (xRef.current <= -totalWidth) xRef.current += totalWidth;
- 
+        if (trackRef.current) {
+          trackRef.current.style.transform = `translateX(${xRef.current}px)`;
+        }
+      }
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [totalWidth]);
+
+  // Mouse drag
+  const onMouseDown = (e) => {
+    isDragging.current = true;
+    dragStartX.current = e.clientX;
+    dragStartOffset.current = xRef.current;
+    e.preventDefault();
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging.current) return;
+    const delta = e.clientX - dragStartX.current;
+    xRef.current = dragStartOffset.current + delta;
+    if (xRef.current > 0) xRef.current -= totalWidth;
+    if (xRef.current <= -totalWidth) xRef.current += totalWidth;
+    if (trackRef.current) trackRef.current.style.transform = `translateX(${xRef.current}px)`;
+  };
+
+  const onMouseUp = () => { isDragging.current = false; };
+
+  // Touch drag
+  const onTouchStart = (e) => {
+    isDragging.current = true;
+    dragStartX.current = e.touches[0].clientX;
+    dragStartOffset.current = xRef.current;
+  };
+  const onTouchMove = (e) => {
+    if (!isDragging.current) return;
+    const delta = e.touches[0].clientX - dragStartX.current;
+    xRef.current = dragStartOffset.current + delta;
+    if (xRef.current > 0) xRef.current -= totalWidth;
+    if (xRef.current <= -totalWidth) xRef.current += totalWidth;
+    if (trackRef.current) trackRef.current.style.transform = `translateX(${xRef.current}px)`;
+  };
+  const onTouchEnd = () => { isDragging.current = false; };
+
+  const openLightbox = (realIndex) => {
+    if (Math.abs(xRef.current - dragStartOffset.current) < 5) {
+      setLightbox(realIndex % galleryItems.length);
+    }
+  };
+
+  const prev = () => setLightbox((i) => (i - 1 + galleryItems.length) % galleryItems.length);
+  const next = () => setLightbox((i) => (i + 1) % galleryItems.length);
+
+  return (
+    <section id="galerie" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-px bg-primary" />
+            <span className="text-primary text-sm font-semibold tracking-[0.25em] uppercase">Portofoliu</span>
+          </div>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Galeria noastră
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Fiecare proiect finalizat este dovada angajamentului nostru față de calitate.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Carousel */}
+      <div
+        className="relative w-full overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        style={{ height: 240 }}
+      >
+        <div
+          ref={trackRef}
+          className="flex gap-4 absolute top-0 left-0"
+          style={{ willChange: 'transform' }}
+        >
+          {items.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => openLightbox(index)}
+              className="relative flex-shrink-0 rounded-lg overflow-hidden bg-secondary border border-border/30 group"
+              style={{ width: CARD_WIDTH, height: 240 }}
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                draggable={false}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-foreground text-sm font-semibold">{item.title}</p>
+                <p className="text-primary text-xs">{item.tag}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-5xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryItems[lightbox].url}
+                alt={galleryItems[lightbox].title}
+                className="w-full max-h-[80vh] object-contain rounded-lg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background to-transparent rounded-b-lg">
+                <p className="font-display text-lg font-bold text-foreground">{galleryItems[lightbox].title}</p>
+                <p className="text-primary text-sm">{galleryItems[lightbox].tag}</p>
+              </div>
+              <button onClick={() => setLightbox(null)} className="absolute top-3 right-3 w-10 h-10 rounded-full bg-background/80 flex items-center justify-center text-foreground hover:text-primary transition-all">
+                <X className="w-5 h-5" />
+              </button>
+              <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-background/80 flex items-center justify-center text-foreground hover:text-primary transition-all">
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-background/80 flex items-center justify-center text-foreground hover:text-primary transition-all">
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}
