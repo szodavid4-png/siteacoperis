@@ -44,4 +44,54 @@ const logos = {
   Velux: (
     <svg viewBox="0 0 110 40" className="h-10 w-auto">
       <rect x="0" y="0" width="50" height="40" fill="#CC0000" rx="2"/>
- 
+      <text x="5" y="28" fontFamily="Arial Black, sans-serif" fontSize="20" fontWeight="900" fill="white" letterSpacing="1">VEL</text>
+      <text x="55" y="28" fontFamily="Arial Black, sans-serif" fontSize="20" fontWeight="900" fill="white" letterSpacing="1">UX</text>
+    </svg>
+  ),
+};
+
+export default function PartnersSection() {
+  return (
+    <section className="py-16 lg:py-20 border-y border-border/50 bg-secondary/20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="w-12 h-px bg-primary" />
+            <span className="text-primary text-sm font-semibold tracking-[0.25em] uppercase">Parteneri</span>
+            <div className="w-12 h-px bg-primary" />
+          </div>
+          <p className="text-muted-foreground text-base">
+            Lucrăm exclusiv cu branduri de top, recunoscute la nivel european
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 items-center">
+          {partners.map((partner, index) => (
+            <motion.div
+              key={partner.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+              <a
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full p-6 rounded-lg border border-border/40 bg-card/40 hover:border-primary/30 hover:bg-card transition-all duration-300 group opacity-60 hover:opacity-100"
+              >
+                {logos[partner.name]}
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
