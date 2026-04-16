@@ -29,6 +29,12 @@ const testimonials = [
   },
 ];
 
+const videoTestimonials = [
+  'https://player.cloudinary.com/embed/?cloud_name=dgnlmvzgk&public_id=WhatsApp_Video_2026-04-14_at_18.15.13_1_v3tvxl',
+  'https://player.cloudinary.com/embed/?cloud_name=dgnlmvzgk&public_id=WhatsApp_Video_2026-04-14_at_18.15.13_unmd3c',
+  'https://player.cloudinary.com/embed/?cloud_name=dgnlmvzgk&public_id=WhatsApp_Video_2026-04-14_at_18.15.12_ita8mr',
+];
+
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
 
@@ -58,6 +64,28 @@ export default function TestimonialsSection() {
             Ce spun <span className="text-primary">clienții noștri</span>
           </h2>
         </motion.div>
+
+        {/* Video Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {videoTestimonials.map((url, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              className="rounded-lg overflow-hidden border border-border/50 bg-card aspect-video"
+            >
+              <iframe
+                src={url}
+                className="w-full h-full"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+              />
+            </motion.div>
+          ))}
+        </div>
 
         {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto relative">
