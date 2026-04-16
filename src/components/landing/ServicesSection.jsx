@@ -5,34 +5,60 @@ import RevealOnScroll from './RevealOnScroll';
 
 const services = [
   {
-    title: 'Învelitori Ceramice',
-    description: 'Țigle ceramice premium pentru un acoperiș elegant și durabil. Rezistență garantată la intemperii și îngheț-dezgheț.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/76a1ce3b2_generated_0c3bf5a5.png',
+    title: 'Reparații Acoperișuri Orice Tip',
+    description: 'Intervenim rapid pentru reparații la orice tip de acoperiș — ceramică, metal, bitum sau tablă. Diagnosticăm problemele și oferim soluții durabile care previn deteriorarea ulterioară.',
   },
   {
-    title: 'Învelitori Metalice',
-    description: 'Tablă falțuită și țiglă metalică de înaltă calitate. Soluția modernă, ușoară și rezistentă la coroziune.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/c18976d65_generated_1425caef.png',
+    title: 'Montaj Acoperișuri',
+    description: 'Montaj complet al acoperișurilor noi, de la structura de lemn până la învelitoarea finală. Lucrăm cu materiale certificate și respectăm toate normele tehnice în vigoare.',
   },
   {
-    title: 'Acoperișuri Plate',
-    description: 'Sisteme complete de hidroizolație pentru terase și acoperișuri plate. Membrane de ultimă generație.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/90cf30cb4_generated_4d69f9a2.png',
+    title: 'Dulgherie',
+    description: 'Execuție și reparație șarpante din lemn masiv. Meșteri calificați cu experiență în structuri complexe — căpriori, pane, cosoroabe și ferme de acoperiș.',
   },
   {
-    title: 'Jgheaburi & Burlane',
-    description: 'Sisteme pluviale din zinc, cupru sau aluminiu. Montaj profesional și protecție completă.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/0e383b419_generated_1163dc61.png',
+    title: 'Mansardări',
+    description: 'Transformăm spațiul podului într-o mansardă funcțională și estetică. Planificare, structură, izolație, ferestre Velux și finisaje complete.',
   },
   {
-    title: 'Renovare Acoperiș',
-    description: 'Refacerea completă a structurii și învelitorii. Consolidare șarpantă, schimbare astereală și izolație.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/38caf94b8_generated_83d659a7.png',
+    title: 'Terase & Foișoare',
+    description: 'Construim și acoperim terase și foișoare cu soluții rezistente la intemperii. Structuri din lemn sau metal, cu învelitori adaptate stilului casei tale.',
   },
   {
-    title: 'Izolație & Mansardare',
-    description: 'Izolație termică și fonică profesională. Transformăm mansarda într-un spațiu locuibil premium.',
-    img: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/d51046e90_generated_4e660e8f.png',
+    title: 'Montaj Orice Tip de Tablă',
+    description: 'Montaj profesional tablă falțuită, tablă cutată, tablă tip țiglă sau tablă lindab. Soluții moderne pentru acoperișuri rezidențiale și industriale.',
+  },
+  {
+    title: 'Montaj Țiglă Ceramică',
+    description: 'Montaj țiglă ceramică de calitate superioară — aspect tradițional, rezistență maximă la UV, îngheț și intemperii. Garanție extinsă pe lucrare.',
+  },
+  {
+    title: 'Montaj Șindrilă Bituminoasă',
+    description: 'Șindrilă bituminoasă — soluție ușoară, flexibilă și estetică pentru acoperișuri cu forme complexe. Rezistentă la vânt și precipitații, disponibilă în mai multe culori.',
+  },
+  {
+    title: 'Montaj Panouri Sandwich',
+    description: 'Panouri sandwich termoizolante pentru hale, depozite și construcții industriale sau rezidențiale. Montaj rapid, eficiență energetică ridicată.',
+  },
+  {
+    title: 'Hidroizolații',
+    description: 'Sisteme complete de hidroizolație pentru acoperișuri plate, terase și fundații. Membrane bituminoase, membrane EPDM și soluții lichide certificate.',
+  },
+  {
+    title: 'Izolații Interioare & Exterioare',
+    description: 'Izolație termică și fonică pentru mansarde, poduri și pereți. Vată minerală, polistiren sau spumă poliuretanică — reducere semnificativă a facturilor la energie.',
+  },
+  {
+    title: 'Vopsire Acoperișuri',
+    description: 'Revigorăm acoperișurile vechi prin vopsire specializată cu vopsele anticorozive și UV. Prelungim durata de viață a învelitorii și redăm aspectul original.',
+  },
+  {
+    title: 'Montaj & Reparații Sistem Pluvial',
+    description: 'Montaj și reparații jgheaburi și burlane din zinc, aluminiu sau PVC. Sistem pluvial corect dimensionat pentru protecția fundației și a fațadei.',
+  },
+  {
+    title: 'Montaj Parazăpezi',
+    description: 'Montaj sisteme parazăpezi pentru prevenirea avalanșelor de zăpadă de pe acoperiș. Protejăm persoanele, vehiculele și elementele arhitecturale de sub streașină.',
   },
 ];
 
@@ -101,29 +127,6 @@ export default function ServicesSection() {
                 className="group relative overflow-hidden rounded-lg bg-secondary border border-border/50 cursor-pointer"
                 onClick={scrollToContact}
               >
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <motion.img
-                    src={service.img}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
-                  {/* Blueprint reveal */}
-                  <motion.div
-                    className="absolute inset-0 bg-background/60 flex items-center justify-center"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.35 }}
-                  >
-                    <span className="text-primary font-semibold tracking-wide uppercase text-sm flex items-center gap-2">
-                      Solicită Ofertă <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </motion.div>
-                </div>
-
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between">
