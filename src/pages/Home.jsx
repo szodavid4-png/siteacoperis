@@ -3,7 +3,6 @@ import Navbar from '../components/landing/Navbar';
 import HeroSection from '../components/landing/HeroSection';
 import ServicesSection from '../components/landing/ServicesSection';
 import PartnersSection from '../components/landing/PartnersSection';
-import StatsSection from '../components/landing/StatsSection';
 import GallerySection from '../components/landing/GallerySection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
 import QuoteFormSection from '../components/landing/QuoteFormSection';
@@ -18,8 +17,6 @@ export default function Home() {
       <HeroSection />
       <PartnersSection />
       <ServicesSection />
-      <StatsSection />
-
       <GallerySection />
       <TestimonialsSection />
       <QuoteFormSection />
