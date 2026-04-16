@@ -5,13 +5,20 @@ import { Send, CheckCircle, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 const serviceOptions = [
-  'Învelitori ceramice',
-  'Învelitori metalice',
-  'Acoperișuri plate',
-  'Jgheaburi și burlane',
-  'Renovare acoperiș',
-  'Izolație și mansardare',
-  'Altele',
+  'Reparații Acoperișuri Orice Tip',
+  'Montaj Acoperișuri',
+  'Dulgherie',
+  'Mansardări',
+  'Terase & Foișoare',
+  'Montaj Orice Tip de Tablă',
+  'Montaj Țiglă Ceramică',
+  'Montaj Șindrilă Bituminoasă',
+  'Montaj Panouri Sandwich',
+  'Hidroizolații',
+  'Izolații Interioare & Exterioare',
+  'Vopsire Acoperișuri',
+  'Montaj & Reparații Sistem Pluvial',
+  'Montaj Parazăpezi',
 ];
 
 export default function QuoteFormSection() {
