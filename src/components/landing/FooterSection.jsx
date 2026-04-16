@@ -14,15 +14,12 @@ export default function FooterSection() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-sm flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-lg">A</span>
-              </div>
-              <span className="text-foreground font-display font-bold text-xl">ACOPERIȘURI</span>
+              <img
+                src="https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/e898d8133_logo_transparent1.png"
+                alt="Acoperișuri Premium"
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Construim acoperișuri premium care definesc orizontul. 
-              Calitate, garanție și profesionalism de peste 18 ani.
-            </p>
           </div>
 
           {/* Quick Links */}
@@ -82,10 +79,7 @@ export default function FooterSection() {
                 </a>
               </li>
 
-              <li className="flex items-start gap-3 text-muted-foreground text-sm">
-                <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                <span>București și împrejurimi<br />Ilfov, Giurgiu, Dâmbovița</span>
-              </li>
+
             </ul>
           </div>
         </div>
