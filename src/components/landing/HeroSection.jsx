@@ -73,14 +73,13 @@ export default function HeroSection() {
           </div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1 }}
-            className="text-muted-foreground text-lg lg:text-xl max-w-xl leading-relaxed mb-10 font-medium mx-auto text-center"
-          >
-            Materiale de cea mai înaltă calitate, meșteri cu experiență și o garanție
-            care vă oferă liniște. Fiecare proiect este o capodoperă de inginerie.
-          </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 1 }}
+  className="text-primary text-lg lg:text-xl max-w-xl leading-relaxed mb-10 font-black mx-auto text-center tracking-widest uppercase"
+>
+  Oferim servicii de urgență 24/7 București & Ilfov
+</motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
