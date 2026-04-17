@@ -5,60 +5,74 @@ import RevealOnScroll from './RevealOnScroll';
 
 const services = [
   {
-    title: 'Reparații Acoperișuri Orice Tip',
-    description: 'Intervenim rapid pentru reparații la orice tip de acoperiș — ceramică, metal, bitum sau tablă. Diagnosticăm problemele și oferim soluții durabile care previn deteriorarea ulterioară.',
+    title: 'Montaj Panouri Sandwich',
+    description: 'Panouri sandwich termoizolante pentru hale, depozite și construcții industriale sau rezidențiale. Montaj rapid, eficiență energetică ridicată.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/eebf174c4_WhatsAppImage2026-04-17at1801201.jpg',
   },
   {
-    title: 'Montaj Acoperișuri',
-    description: 'Montaj complet al acoperișurilor noi, de la structura de lemn până la învelitoarea finală. Lucrăm cu materiale certificate și respectăm toate normele tehnice în vigoare.',
+    title: 'Reparații Acoperiș',
+    description: 'Intervenim rapid pentru reparații la orice tip de acoperiș — ceramică, metal, bitum sau tablă. Diagnosticăm problemele și oferim soluții durabile.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/385bad3dd_WhatsAppImage2026-04-17at1801202.jpg',
+  },
+  {
+    title: 'Terase & Foișoare',
+    description: 'Construim și acoperim terase și foișoare cu soluții rezistente la intemperii. Structuri din lemn sau metal, adaptate stilului casei tale.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/afb0a4a45_WhatsAppImage2026-04-17at180121.jpeg',
+  },
+  {
+    title: 'Mansarde',
+    description: 'Transformăm spațiul podului într-o mansardă funcțională și estetică. Planificare, structură, izolație, ferestre Velux și finisaje complete.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/923c637f7_WhatsAppImage2026-04-17at1801211.jpeg',
   },
   {
     title: 'Dulgherie',
     description: 'Execuție și reparație șarpante din lemn masiv. Meșteri calificați cu experiență în structuri complexe — căpriori, pane, cosoroabe și ferme de acoperiș.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/58491787d_WhatsAppImage2026-04-17at1801212.jpeg',
   },
   {
-    title: 'Mansardări',
-    description: 'Transformăm spațiul podului într-o mansardă funcțională și estetică. Planificare, structură, izolație, ferestre Velux și finisaje complete.',
+    title: 'Montaj Țiglă Metalică',
+    description: 'Montaj profesional țiglă metalică — soluție modernă, ușoară și durabilă. Rezistentă la coroziune, UV și intemperii, disponibilă în multiple culori.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/81baff782_WhatsAppImage2026-04-17at1801213.jpeg',
   },
   {
-    title: 'Terase & Foișoare',
-    description: 'Construim și acoperim terase și foișoare cu soluții rezistente la intemperii. Structuri din lemn sau metal, cu învelitori adaptate stilului casei tale.',
+    title: 'Țiglă Ceramică',
+    description: 'Montaj țiglă ceramică de calitate superioară — aspect tradițional, rezistență maximă la UV, îngheț și intemperii. Garanție extinsă pe lucrare.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/005178239_WhatsAppImage2026-04-17at1801214.jpg',
+  },
+  {
+    title: 'Vopsire Acoperiș',
+    description: 'Revigorăm acoperișurile vechi prin vopsire specializată cu vopsele anticorozive și UV. Prelungim durata de viață a învelitorii și redăm aspectul original.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/726dc73dc_WhatsAppImage2026-04-17at1801215.jpg',
+  },
+  {
+    title: 'Montaj Ferestre Velux',
+    description: 'Montaj profesional ferestre de mansardă Velux. Lumină naturală maximă, izolație termică și fonică excelentă, etanșeitate garantată.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/4c5c8f5a6_WhatsAppImage2026-04-17at180122.jpeg',
   },
   {
     title: 'Montaj Orice Tip de Tablă',
-    description: 'Montaj profesional tablă falțuită, tablă cutată, tablă tip țiglă sau tablă lindab. Soluții moderne pentru acoperișuri rezidențiale și industriale.',
-  },
-  {
-    title: 'Montaj Țiglă Ceramică',
-    description: 'Montaj țiglă ceramică de calitate superioară — aspect tradițional, rezistență maximă la UV, îngheț și intemperii. Garanție extinsă pe lucrare.',
-  },
-  {
-    title: 'Montaj Șindrilă Bituminoasă',
-    description: 'Șindrilă bituminoasă — soluție ușoară, flexibilă și estetică pentru acoperișuri cu forme complexe. Rezistentă la vânt și precipitații, disponibilă în mai multe culori.',
-  },
-  {
-    title: 'Montaj Panouri Sandwich',
-    description: 'Panouri sandwich termoizolante pentru hale, depozite și construcții industriale sau rezidențiale. Montaj rapid, eficiență energetică ridicată.',
+    description: 'Montaj tablă falțuită, tablă cutată, tip țiglă sau lindab. Soluții moderne pentru acoperișuri rezidențiale și industriale.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/3bcda7993_WhatsAppImage2026-04-17at182146.jpg',
   },
   {
     title: 'Hidroizolații',
-    description: 'Sisteme complete de hidroizolație pentru acoperișuri plate, terase și fundații. Membrane bituminoase, membrane EPDM și soluții lichide certificate.',
+    description: 'Sisteme complete de hidroizolație pentru acoperișuri plate, terase și fundații. Membrane bituminoase, EPDM și soluții lichide certificate.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/2d2fc5a02_WhatsAppImage2026-04-17at1801221.jpg',
   },
   {
-    title: 'Izolații Interioare & Exterioare',
-    description: 'Izolație termică și fonică pentru mansarde, poduri și pereți. Vată minerală, polistiren sau spumă poliuretanică — reducere semnificativă a facturilor la energie.',
-  },
-  {
-    title: 'Vopsire Acoperișuri',
-    description: 'Revigorăm acoperișurile vechi prin vopsire specializată cu vopsele anticorozive și UV. Prelungim durata de viață a învelitorii și redăm aspectul original.',
-  },
-  {
-    title: 'Montaj & Reparații Sistem Pluvial',
+    title: 'Sistem Pluvial',
     description: 'Montaj și reparații jgheaburi și burlane din zinc, aluminiu sau PVC. Sistem pluvial corect dimensionat pentru protecția fundației și a fațadei.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/f3d0b7d18_WhatsAppImage2026-04-17at1801222.jpg',
+  },
+  {
+    title: 'Izolații',
+    description: 'Izolație termică și fonică pentru mansarde, poduri și pereți. Vată minerală, polistiren sau spumă poliuretanică — reducere semnificativă a facturilor la energie.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/7f68e258e_WhatsAppImage2026-04-17at1801223.jpg',
   },
   {
     title: 'Montaj Parazăpezi',
-    description: 'Montaj sisteme parazăpezi pentru prevenirea avalanșelor de zăpadă de pe acoperiș. Protejăm persoanele, vehiculele și elementele arhitecturale de sub streașină.',
+    description: 'Montaj sisteme parazăpezi pentru prevenirea avalanșelor de zăpadă de pe acoperiș. Protejăm persoanele și elementele arhitecturale de sub streașină.',
+    image: 'https://media.base44.com/images/public/69de30306771a2ccbe5f46cb/fd41177f6_WhatsAppImage2026-04-17at180120.jpeg',
   },
 ];
 
@@ -122,37 +136,45 @@ export default function ServicesSection() {
               viewport={{ once: true, margin: '-50px' }}
             >
               <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="group relative overflow-hidden rounded-lg bg-secondary border border-border/50 cursor-pointer"
-                onClick={scrollToContact}
-              >
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between">
-                    <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <motion.div
-                      initial={{ x: 0, opacity: 0.3 }}
-                      whileHover={{ x: 4, opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ArrowRight className="w-5 h-5 text-primary mt-1" />
-                    </motion.div>
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mt-2">
-                    {service.description}
-                  </p>
-                  {/* Bottom accent line */}
-                  <motion.div
-                    className="h-px bg-primary mt-4"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: '100%' }}
-                    transition={{ duration: 0.4 }}
-                  />
-                </div>
-              </motion.div>
+  whileHover={{ y: -6 }}
+  transition={{ duration: 0.3, ease: 'easeOut' }}
+  className="group relative overflow-hidden rounded-lg bg-secondary border border-border/50 cursor-pointer"
+  onClick={scrollToContact}
+>
+  {service.image && (
+    <div className="relative h-48 overflow-hidden">
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-all duration-300" />
+    </div>
+  )}
+  <div className="p-6">
+    <div className="flex items-start justify-between">
+      <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+        {service.title}
+      </h3>
+      <motion.div
+        initial={{ x: 0, opacity: 0.3 }}
+        whileHover={{ x: 4, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <ArrowRight className="w-5 h-5 text-primary mt-1" />
+      </motion.div>
+    </div>
+    <p className="text-muted-foreground text-sm leading-relaxed mt-2">
+      {service.description}
+    </p>
+    <motion.div
+      className="h-px bg-primary mt-4"
+      initial={{ width: 0 }}
+      whileHover={{ width: '100%' }}
+      transition={{ duration: 0.4 }}
+    />
+  </div>
+</motion.div>
             </motion.div>
             </RevealOnScroll>
           ))}
